@@ -11,8 +11,10 @@
 <section>
     <h1 class="logo"><span>UI</span>Brush</h1>
     <div class="image">
-        <picture>
-            <img src="img/autumn.jpeg" alt="autumn" width="480">
+        <picture class="img-responsive slide-img">
+            <source media="(max-width: 480px)" srcset="./img/autumn_small.jpg">
+            <source media="(min-width: 768px)" srcset="./img/autumn_medium.jpg">
+            <img src="img/autumn_small.jpg" alt="autumn">
         </picture>
         <h2>
             <span>Welcome To UIBrush</span>
@@ -22,7 +24,7 @@
     </div>
     <div class="rectangle">
         <br>
-        Lorem ipsum dolor sit amet <a href="#">consectetuer adipiscing elit</a>
+        Lorem ipsum dolor sit amet <a href="javascript:void(0);">consectetuer adipiscing elit</a>
     </div>
 
     <h2>UIBrush</h2>
