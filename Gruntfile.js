@@ -33,10 +33,24 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'assets/dist/images/',
-                    src: ['**/*.{png,jpeg,gif}'],
+                    src: ['**/*.{png,jpg,jpeg,gif}'],
                     dest: 'pub/img/'
                 }]
             }
+        },
+
+        watch: {
+            css: {
+                files: ['assets/dist/css/responsive-styles.css'],
+                tasks: ['postcss', 'cssmin'],
+                options: {
+                    livereload: true,
+                },
+            },
+            imagemin: {
+                files: 'assets/dist/images/**/*.{png,jpg,jpeg,gif}',
+                tasks: ['imagemin']
+            },
         }
 
     });
@@ -45,11 +59,11 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    // grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // grunt.registerTask('default', ['cssmin']);
-    grunt.registerTask('default', ['postcss', 'cssmin', 'imagemin']);
+    grunt.registerTask('default', ['postcss', 'cssmin', 'imagemin', 'watch']);
     // grunt.registerTask('dev', ['less:dev', 'postcss:dev', 'imagemin', 'watch']);
 };
