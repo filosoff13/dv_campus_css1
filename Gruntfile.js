@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                         })
                     ]
                 },
-                src: 'pub/css/responsive-styles.css',
+                src: 'pub/css/styles.css',
                 dest: 'pub/css/responsive-styles.min.css'
             },
             prod: {
